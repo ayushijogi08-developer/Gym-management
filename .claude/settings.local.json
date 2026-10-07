@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter analyze *)",
+      "Bash(node scripts/verifyAiChat.js)",
+      "Bash(node *)",
+      "Bash(curl -s -X POST http://localhost:5099/api/auth/register -H \"Content-Type: application/json\" -d '{\"fullName\":\"Smoke Test Member\",\"email\":\"smoke_member_$\\(date +%s\\)@test.com\",\"phone\":\"+1234567890\",\"password\":\"TestPass123!\",\"role\":\"member\"}')",
+      "Bash(curl -s -X POST http://localhost:5099/api/body-progress -H \"Content-Type: application/json\" -d '{\"memberId\":\"507f1f77bcf86cd799439011\",\"weightKg\":80,\"heightCm\":180}' -w \"\\\\nHTTP %{http_code}\\\\n\")",
+      "Bash(curl -s -X POST http://localhost:5099/api/body-progress -H \"Content-Type: application/json\" -H \"Authorization: Bearer badtoken\" -d '{\"memberId\":\"507f1f77bcf86cd799439011\",\"weightKg\":80,\"heightCm\":180}' -w \"\\\\nHTTP %{http_code}\\\\n\")",
+      "Bash(flutter --version)"
+    ]
+  }
+}
